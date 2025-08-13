@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — CV</title>
+  <meta name="description" content="Personal website and online CV for Your Name." />
+  <meta property="og:title" content="Your Name — CV" />
+  <meta property="og:description" content="Personal website and online CV for Your Name." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#b08968" />
+  <style>
+    :root{
+      --bg:#f7f3ef;
+      --card:#fffaf5;
+      --ink:#2f2a26;
+      --muted:#6e625a;
+      --accent:#b08968; /* warm coffee */
+      --accent-ink:#2a1f18;
+      --ring:rgba(176,137,104,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:900px;margin:0 auto;padding:32px 20px}
+    header{
+      display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+      padding:20px; margin-bottom:24px;
+      background:linear-gradient(180deg, #fff5eb, #fffaf5);
+      border:1px solid #f0e4d9;
+      border-radius:20px;
+      box-shadow:0 8px 24px rgba(91,64,44,.08), inset 0 1px 0 #fff;
+    }
+    .avatar{
+      width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid #f0e4d9;background:#fff;
+    }
+    .title{display:flex;gap:16px;align-items:center}
+    h1{
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-weight:700; line-height:1.2; margin:0; font-size:28px;
+    }
+    .subtitle{margin:0;color:var(--muted);font-size:16px}
+    .links{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid #e9ddd2;background:#fff; color:var(--accent-ink);
+      padding:10px 14px;border-radius:999px; text-decoration:none; font-weight:600;
+      box-shadow:0 2px 0 #e8dacd;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn:focus{outline:3px solid var(--ring); outline-offset:2px}
+    main{display:grid;grid-template-columns:1fr;gap:16px}
+    section{
+      background:var(--card);
+      border:1px solid #efe5db;
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 6px 20px rgba(91,64,44,.06);
+    }
+    section h2{
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      margin:0 0 8px 0;font-size:22px
+    }
+    .muted{color:var(--muted)}
+    ul{padding-left:18px;margin:8px 0}
+    .item{margin:10px 0}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:12px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid #e9ddd2;margin:4px 6px 0 0}
+    footer{color:var(--muted);font-size:14px;margin-top:16px;text-align:center}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (min-width:860px){
+      main{grid-template-columns:1fr 1fr}
+      .grid-2{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#content">Skip to content</a>
+  <div class="container">
+    <header>
+      <div class="title">
+        <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Portrait placeholder" />
+        <div>
+          <h1>Your Name</h1>
+          <p class="subtitle">Your Role — Your Location</p>
+          <p class="muted">Short, cozy one-liner about you or what you love doing.</p>
+        </div>
+      </div>
+      <nav class="links" aria-label="Quick links">
+        <a class="btn" href="mailto:you@example.com">Email</a>
+        <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="#" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="#projects">Projects</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section aria-labelledby="about">
+        <h2 id="about">About</h2>
+        <p>
+          A warm paragraph about who you are, what you’re into, and what you’re looking for.
+          Keep it human. Two or three sentences is perfect.
+        </p>
+      </section>
+
+      <section aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
+        <div class="item">
+          <strong>Job Title — Company</strong> · <span class="muted">2023–Present</span>
+          <ul>
+            <li>Impact-focused bullet with a result (numbers help).</li>
+            <li>Another bullet showing ownership or collaboration.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>Previous Title — Company</strong> · <span class="muted">2021–2023</span>
+          <ul>
+            <li>What changed because you were there?</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <div class="grid-2">
+          <div class="item">
+            <strong>Project Name</strong> — <span class="muted">One line on what it is.</span><br/>
+            <a href="#" target="_blank" rel="noopener">Live</a> · <a href="#" target="_blank" rel="noopener">Code</a>
+          </div>
+          <div class="item">
+            <strong>Another Project</strong> — <span class="muted">What makes it special.</span><br/>
+            <a href="#" target="_blank" rel="noopener">Live</a> · <a href="#" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills">
+        <h2 id="skills">Skills</h2>
+        <div>
+          <span class="pill">Skill A</span>
+          <span class="pill">Skill B</span>
+          <span class="pill">Skill C</span>
+          <span class="pill">Skill D</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="education">
+        <h2 id="education">Education</h2>
+        <p><strong>Degree — School</strong> · <span class="muted">Year</span></p>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <p>Best way to reach me is <a href="mailto:you@example.com">email</a>. I’m open to opportunities and friendly chats.</p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Your Name · Built with plain HTML/CSS · Fast, accessible, and cozy.
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
