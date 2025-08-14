@@ -1,19 +1,5 @@
-# Cozy CV Site
+# Amir Fattahi — Personal Website
 
-A single-file, warm and minimalist personal website/CV.
+My personal CV website, built with plain HTML/CSS and hosted on GitHub Pages.
 
-## Quick edit
-Open `index.html` and replace placeholders: name, role, links, experience, projects, skills, education.
-
-## Publish on GitHub Pages (free)
-1. Create a repo called `your-username.github.io`.
-2. Upload `index.html` to the root of the repo and commit.
-3. Visit `https://your-username.github.io` (usually live within a minute).
-4. (Optional) Add a custom domain in repo **Settings → Pages**.
-
-## Alternative: Netlify Drop (free, very fast)
-1. Go to Netlify Drop and drag the `index.html` file.
-2. You’ll get a free site URL like `something.netlify.app`.
-
-## Tip
-Keep the page one screen wide, focus on clarity and kindness. You can always grow it later.
+**Live site:** [amirhossein-fattahi.github.io](https://amirhossein-fattahi.github.io)
