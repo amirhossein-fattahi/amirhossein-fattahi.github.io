@@ -6,7 +6,7 @@
   <title>Amir Fattahi — Control Systems & Robotics</title>
   <meta name="description" content="Graduate student in Control Systems Engineering at the University of Padua focusing on Robotics and Machine Learning." />
   <meta property="og:title" content="Amir Fattahi — Control Systems & Robotics" />
-  <meta property="og:description" content="Learning-based control, safe autonomy, and human-robot interaction." />
+  <meta property="og:description" content="Learning-based control, safe autonomous systems, and human-robot interaction." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0f1b2d" />
   <style>
@@ -16,6 +16,7 @@
       --accent:#b08968; --accent-ink:#2a1f18; --ring:rgba(176,137,104,.35);
       --border:#efe5db; --shadow:0 6px 20px rgba(91,64,44,.06); --inner:inset 0 1px 0 #fff;
       --tab:#e8ddd3; --tab-active:#d2b79f;
+      --ok:#168a45; --warn:#8a6a16;
     }
     /* Dark Theme override */
     [data-theme="dark"]{
@@ -49,7 +50,6 @@
       color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:600;box-shadow:var(--inner)}
     .btn:hover{transform:translateY(-1px)}
     .btn:focus{outline:3px solid var(--ring);outline-offset:2px}
-
     .theme-toggle{position:absolute;top:14px;right:14px;background:none;border:none;cursor:pointer;font-size:20px;color:var(--ink)}
 
     /* Tabs bar */
@@ -62,7 +62,7 @@
     .tab-panel{display:none}
     .tab-panel[aria-hidden="false"]{display:block}
 
-    /* Sections / cards */
+    /* Card-like sections */
     section{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;
       box-shadow:var(--shadow),var(--inner);margin-bottom:18px}
     section h2{font-family:Georgia,serif;margin:0 0 10px 0;font-size:22px}
@@ -71,13 +71,15 @@
     .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--border);
       margin:6px 6px 0 0;background:var(--card);color:var(--ink)}
 
-    /* Projects grid (auto wraps) */
+    /* Projects grid */
     .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
     .project{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--card)}
     .project h3{margin:0 0 6px 0;font-size:18px}
     .project p{margin:0 0 8px 0}
     .project a{font-weight:600}
 
+    /* Small helper box lists */
+    .box-list{display:grid;gap:12px}
     footer{color:var(--muted);font-size:14px;margin-top:18px;text-align:center}
     @media (max-width:560px){.avatar{width:76px;height:76px}h1{font-size:26px}}
   </style>
@@ -111,88 +113,96 @@
       <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-contact" id="btn-contact">Contact</button>
     </div>
 
-    <!-- About -->
+    <!-- ===== About (three boxed parts) ===== -->
     <section id="tab-about" class="tab-panel" role="tabpanel" aria-labelledby="btn-about" aria-hidden="false">
-      <h2>About</h2>
-      <p>
-        I’m a Control Systems Engineering graduate student at the University of Padua focusing on
-        <strong>robotics</strong> and <strong>machine learning</strong>. I enjoy building controllers that are
-        <em>safe</em> and <em>data-driven</em>, with recent work on underactuated robots (Pendubot/Acrobot),
-        plus hands-on HVAC/IoT experience with industry.
-      </p>
-      <h3 class="muted" style="margin:14px 0 6px">What you’ll find here</h3>
-      <ul style="margin:0 0 6px 18px">
-        <li><strong>CV:</strong> Education, experience, projects, skills, training, publications.</li>
-        <li><strong>Projects:</strong> A few selected GitHub repos with short descriptions.</li>
-        <li><strong>Contact:</strong> Best ways to reach me.</li>
-      </ul>
+      <!-- About summary -->
+      <section>
+        <h2>About</h2>
+        <p>
+          I am a graduate student in <strong>Control Systems Engineering</strong> at the <strong>University of Padua</strong>,
+          based in Padova, Italy, focusing on <strong>Robotics</strong> and <strong>Machine Learning</strong>.
+          During my studies and professional work, I have contributed to projects on learning-based and robust control
+          for <em>underactuated robots</em> (e.g., Pendubot/Acrobot), as well as practical <strong>HVAC/IoT</strong> systems in collaboration with industry.
+          My current interests include safety-aware, data-driven controllers and research problems at the intersection of
+          robot learning and optimal control.
+        </p>
+        <p>
+          Previously, I worked as an <strong>R&amp;D Specialist</strong> on data-center cooling and BMS protocols (BACnet, Modbus, SNMP, MQTT),
+          designed an <strong>IoT</strong> solution for CloudGate service, and developed an <strong>IoT-based synchronous sound distribution system</strong>
+          later presented at a national conference. I enjoy hands-on implementation, from MATLAB/Simulink models to Python/ROS and embedded systems.
+        </p>
+      </section>
+
+      <!-- Projects titles (auto-filled) -->
+      <section>
+        <h2>Projects — Titles</h2>
+        <div id="about-projects-list" class="box-list">
+          <p class="muted">Loading a few recent repository names…</p>
+        </div>
+      </section>
+
+      <!-- Short contact note -->
+      <section>
+        <h2>Contact (short)</h2>
+        <p>Best way to reach me is <a href="mailto:amirhossein.fattahi98@gmail.com">email</a>. You can also find me on
+          <a href="https://www.linkedin.com/in/ahfattahi/" target="_blank" rel="noopener">LinkedIn</a> and
+          <a href="https://github.com/amirhossein-fattahi" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+      </section>
     </section>
 
-    <!-- CV -->
+    <!-- ===== CV (boxed parts) ===== -->
     <section id="tab-cv" class="tab-panel" role="tabpanel" aria-labelledby="btn-cv" aria-hidden="true">
-      <h2>CV</h2>
-
-      <div class="item">
-        <strong>Education</strong>
-        <div class="item" style="margin-top:6px">
+      <section>
+        <h2>Education</h2>
+        <div class="item">
           <strong>M.Sc. in Control Systems Engineering</strong><br/>
-          University of Padova, Robotics &amp; AI<br/>
+          University of Padova,<br/>
+          Robotics &amp; AI<br/>
           <span class="muted">2023–2026</span>
         </div>
         <div class="item">
           <strong>B.Sc. in Electrical Engineering</strong><br/>
-          Sharif University of Technology, Control Systems<br/>
+          Sharif University of Technology,<br/>
+          Control Systems<br/>
           <span class="muted">2017–2022</span>
         </div>
-      </div>
+      </section>
 
-      <div class="item">
-        <strong>Experience</strong>
-        <div class="item" style="margin-top:6px">
-          <strong>Research Trainee</strong> — University of Padova<br/>
+      <section>
+        <h2>Experience</h2>
+        <div class="item">
+          <strong>Research Trainee</strong><br/>
+          University of Padova<br/>
           <span class="muted">Sep 2024 – Present</span><br/>
-          Researching optimal/robust control for underactuated robots; developing algorithms for stability and efficiency.
+          Researching optimal and robust control methods for underactuated robots.<br/>
+          Developing control algorithms to enhance stability and efficiency.
         </div>
         <div class="item">
-          <strong>R&amp;D Specialist</strong> — Kara Ravesh Saba<br/>
+          <strong>R&amp;D Specialist</strong><br/>
+          Kara Ravesh Saba<br/>
           <span class="muted">May 2023 – Sep 2023</span><br/>
-          Data-center cooling; BMS protocols (BACnet, Modbus, SNMP, MQTT); IoT solution for CloudGate; HVACR systems.
+          Developed data-center cooling solutions and worked with BMS protocols (BACnet, Modbus, SNMP, MQTT).<br/>
+          Designed an IoT solution for CloudGate service; contributed to high-quality HVACR systems.
         </div>
         <div class="item">
-          <strong>Researcher</strong> — Nove<br/>
+          <strong>Researcher</strong><br/>
+          Nove<br/>
           <span class="muted">Feb 2021 – May 2022</span><br/>
-          IoT-based synchronous sound distribution; optimal data transfer; automatic curtain controller prototype.
+          Designed an IoT-based synchronous sound distribution system and studied optimal data transfer.<br/>
+          Built an automatic curtain controller prototype.
         </div>
         <div class="item">
-          <strong>Industrial Automation Specialist</strong> — Tehranbay<br/>
+          <strong>Industrial Automation Specialist</strong><br/>
+          Tehranbay<br/>
           <span class="muted">Oct 2018 – Oct 2019</span><br/>
-          Consulting on automation projects; support for SEO and sales in the sector.
+          Consulted on design/optimization of industrial automation projects; supported SEO and sales in the sector.
         </div>
-      </div>
+      </section>
 
-      <div class="item">
-        <strong>Selected Academic Projects</strong>
-        <div class="item" style="margin-top:6px">
-          <strong>Reinforcement Learning for Pendubot Control (Ongoing)</strong> — Potential master project (with Acrobot).<br/>
-          <span class="muted">Python</span>
-        </div>
-        <div class="item">
-          <strong>Modeling &amp; Control of Modular Servo Motor</strong> — Course project (Linear Control Lab).<br/>
-          <span class="muted">MATLAB · Simulink</span>
-        </div>
-        <div class="item">
-          <strong>Modeling &amp; Control of Coupled Water Tanks</strong> — Course project (Linear Control Lab).<br/>
-          <span class="muted">MATLAB · Simulink</span>
-        </div>
-        <div class="item">
-          <strong>IoT Sound Synchronous Distribution System</strong> — Bachelor project; later presented nationally.<br/>
-          <span class="muted">Raspberry Pi · Arduino · IoT</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <strong>Skills</strong>
-        <div style="margin-top:6px">
+      <section>
+        <h2>Skills</h2>
+        <div>
           <span class="pill">Python</span><span class="pill">MATLAB</span><span class="pill">C/C++</span>
           <span class="pill">ROS</span><span class="pill">Simulink</span><span class="pill">PyTorch</span>
           <span class="pill">OpenAI Gym</span><span class="pill">NumPy</span><span class="pill">Scikit-learn</span>
@@ -200,51 +210,58 @@
           <span class="pill">Automation Studio</span><span class="pill">SIMATIC Manager</span>
           <span class="pill">Linux</span><span class="pill">LaTeX</span><span class="pill">IoT Systems</span>
         </div>
-      </div>
+      </section>
 
-      <div class="item">
-        <strong>Publications</strong>
-        <div class="item" style="margin-top:6px">
+      <section>
+        <h2>Publications</h2>
+        <div class="item">
           <strong>IoT-Based Synchronous Sound Distribution System</strong><br/>
           <span class="muted">15th National Conference of Electrical, Computer and Mechanical Engineering</span><br/>
-          <span class="muted">Aug 30, 2022 — Shirvan, Iran</span>
+          <span class="muted">Aug 30, 2022 — Shirvan, Iran.</span>
         </div>
-      </div>
+      </section>
 
-      <div class="item">
-        <strong>Specialized Training</strong>
-        <div class="item" style="margin-top:6px">
-          <strong>Industrial Automation</strong> — 120 hours; PLC, industrial networks, Automation Studio, pneumatics/hydraulics.<br/>
-          <span class="muted">May 2019 – Nov 2019 · Grade: 96/100</span>
+      <section>
+        <h2>Specialized Training</h2>
+        <div class="item">
+          <strong>Industrial Automation</strong><br/>
+          120 hours;<br/>
+          <span class="muted">PLC, industrial networks, Automation Studio, pneumatics/hydraulics.</span><br/>
+          <span class="muted">May 2019 – Nov 2019</span><br/>
+          <span class="muted">Grade: 96/100</span>
         </div>
-      </div>
+      </section>
 
-      <div class="item">
-        <strong>Languages</strong>
-        <div class="item" style="margin-top:6px">
-          Persian (Native) · English (Professional, B2) · Italian (Basic, A1–A2)
+      <section>
+        <h2>Languages</h2>
+        <div class="item">
+          Persian (Native)<br/>
+          English (Professional, B2)<br/>
+          Italian (Basic, A1–A2)
         </div>
-      </div>
+      </section>
     </section>
 
-    <!-- Projects -->
+    <!-- ===== Projects ===== -->
     <section id="tab-projects" class="tab-panel" role="tabpanel" aria-labelledby="btn-projects" aria-hidden="true">
-      <h2>Projects</h2>
-      <p class="muted" style="margin-top:-4px">Auto-loaded from GitHub (most recently updated).</p>
-      <div id="projects" class="projects" aria-live="polite">
-        <!-- JS will populate cards here -->
-      </div>
-      <p style="margin-top:10px"><a href="https://github.com/amirhossein-fattahi?tab=repositories" target="_blank" rel="noopener">See all repositories →</a></p>
+      <section>
+        <h2>Projects</h2>
+        <p class="muted" style="margin-top:-4px">Showing your most recently updated repositories.</p>
+        <div id="projects" class="projects" aria-live="polite">
+          <!-- JS will populate cards -->
+        </div>
+        <p style="margin-top:10px"><a href="https://github.com/amirhossein-fattahi?tab=repositories" target="_blank" rel="noopener">See all repositories →</a></p>
+      </section>
     </section>
 
-    <!-- Contact -->
+    <!-- ===== Contact (longer details) ===== -->
     <section id="tab-contact" class="tab-panel" role="tabpanel" aria-labelledby="btn-contact" aria-hidden="true">
-      <h2>Contact</h2>
-      <p>Best way to reach me is <a href="mailto:amirhossein.fattahi98@gmail.com">email</a>.
-        You can also find me on <a href="https://www.linkedin.com/in/ahfattahi/" target="_blank" rel="noopener">LinkedIn</a>
-        and <a href="https://github.com/amirhossein-fattahi" target="_blank" rel="noopener">GitHub</a>.
-      </p>
-      <p class="muted">Full name: Amirhossein Fattahi · Preferred name: Amir Fattahi</p>
+      <section>
+        <h2>Contact</h2>
+        <div class="item"><strong>Email:</strong> <a href="mailto:amirhossein.fattahi98@gmail.com">amirhossein.fattahi98@gmail.com</a></div>
+        <div class="item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ahfattahi/" target="_blank" rel="noopener">linkedin.com/in/ahfattahi</a></div>
+        <div class="item"><strong>GitHub:</strong> <a href="https://github.com/amirhossein-fattahi" target="_blank" rel="noopener">github.com/amirhossein-fattahi</a></div>
+      </section>
     </section>
 
     <footer>© <span id="year"></span> Amir Fattahi</footer>
@@ -257,7 +274,6 @@
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
       themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
-      // Update browser UI color (mobile)
       const meta = document.querySelector('meta[name="theme-color"]');
       if(meta) meta.setAttribute('content', theme === 'dark' ? '#0f1b2d' : '#f7f3ef');
     }
@@ -272,15 +288,13 @@
     function activateTab(id){
       tabs.forEach(t => t.setAttribute('aria-selected', String(t.id === 'btn-' + id)));
       panels.forEach(p => p.setAttribute('aria-hidden', String(p.id !== 'tab-' + id)));
-      // optional: update hash
       history.replaceState(null, '', '#' + id);
     }
     tabs.forEach(btn => btn.addEventListener('click', () => activateTab(btn.id.replace('btn-',''))));
-    // Open tab from hash if present
     const hash = location.hash.replace('#','');
     if(['about','cv','projects','contact'].includes(hash)) activateTab(hash);
 
-    // Projects: load from GitHub API (client-side)
+    // Load repos for Projects grid
     async function loadRepos(){
       const container = document.getElementById('projects');
       try{
@@ -300,6 +314,20 @@
       }
     }
     loadRepos();
+
+    // Fill "Projects — Titles" list in About
+    async function loadAboutProjectTitles(){
+      const list = document.getElementById('about-projects-list');
+      try{
+        const res = await fetch('https://api.github.com/users/amirhossein-fattahi/repos?sort=updated&per_page=6');
+        if(!res.ok) throw new Error('GitHub API error');
+        const data = await res.json();
+        list.innerHTML = data.map(r => `<div class="item">• <a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></div>`).join('');
+      }catch(e){
+        list.innerHTML = '<p class="muted">Couldn’t load project titles. <a href="https://github.com/amirhossein-fattahi?tab=repositories" target="_blank" rel="noopener">See all on GitHub</a>.</p>';
+      }
+    }
+    loadAboutProjectTitles();
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
